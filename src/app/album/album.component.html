@@ -1,0 +1,27 @@
+<div *ngIf="album">
+  <header>
+    <div class="row">
+      <div class="container">
+        <div class="col-md-2 leftcol">
+          <div *ngIf="album.images.length > 0">
+            <img src="{{album.images[0].url}}" alt="artist" class="img-circle img-responsive">
+          </div>
+        </div>
+        <div class="col-md-8 ">
+          <h1>{{album.name}}</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <hr>
+  <br>
+  <div class="row">
+    <div *ngFor="let track of album.tracks.items">
+      <div class="col-md-12 album-img">
+        <div class="well well-sm">
+          <h4>{{track.name}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

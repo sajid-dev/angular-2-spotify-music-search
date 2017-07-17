@@ -1,0 +1,21 @@
+<h1>Need Music?</h1>
+<p>Premium sound quality · Find great new artists · Stream ad-free music · Playlists for any moment</p>
+<form>
+  <input type="text" [(ngModel)]="searchStr" name="searchStr" placeholder="search music..." class="form-control" (keyup)="findStr()">
+</form>
+<br>
+<div *ngIf="searchRes">
+  <div *ngFor="let res of searchRes">
+    <div class="row">
+      <div class="container">
+        <div class="col-md-12 well">
+          <h4><a routerLink="artist/{{res.id}}">{{res.name}}</a></h4>
+          <div>
+            <strong>Generes: </strong>
+            <span *ngFor="let genere of res.genres">{{genere}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
